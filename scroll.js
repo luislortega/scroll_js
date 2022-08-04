@@ -39,3 +39,12 @@ function enableScroll() {
   window.removeEventListener('touchmove', preventDefault, wheelOpt);
   window.removeEventListener('keydown', preventDefaultForScrollKeys, false);
 }
+
+//gesture duality
+node.addEventListener('gestureend', function(e) {
+    if (e.scale < 1.0) {
+        //  moved  closer together
+    } else if (e.scale > 1.0) {
+        //  moved further apart
+    }
+}, false);
